@@ -8,8 +8,13 @@
 </head>
 <body>
 
-	<div class="container" >
-		<ul class="nav nav-tabs">
+<header class="navbar navbar-fixed-top navbar-inverse">
+
+	<div class="navbar-inner">
+	<div class="container">
+	
+		<ul class="nav pull-right">
+
 			<li>
 	  		<%= link_to "Sign in", new_session_path(resource_name) %>
 			</li>
@@ -21,6 +26,8 @@
 			</li>
 		</ul>
 	</div>
+	</div>
+	</header>
 
 <%= yield %>
 
