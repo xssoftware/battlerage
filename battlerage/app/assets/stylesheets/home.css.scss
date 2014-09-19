@@ -23,3 +23,22 @@ textarea {
 .center h1 {
   margin-bottom: 10px;
 }
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 5px;
+  font-size: 1.8em;
+  color: #FA5858;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #FA5858;
+  text-decoration: none;
+}
