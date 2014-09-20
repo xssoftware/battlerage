@@ -8,29 +8,6 @@
 </head>
 <body>
 
-<header class="navbar navbar-fixed-top navbar-inverse">
-
-	<div class="navbar-inner">
-	<div class="container">
-	 <%= link_to "Battle rage", '#', id: "logo" %>
-      <nav>
-	
-		<ul class="nav pull-right">
-
-			<li>
-	  		<%= link_to "Sign in", new_session_path(resource_name) %>
-			</li>
-			<li>
-	  		<%= link_to "Sign up", new_registration_path(resource_name) %>
-			</li>
-			<li>
-				<%= link_to "Forgot your password?", new_password_path(resource_name) %>
-			</li>
-		</ul>
-	</div>
-	</div>
-	</header>
-
 <%= yield %>
 
 </body>
