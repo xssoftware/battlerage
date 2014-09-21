@@ -6,9 +6,26 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body data-spy="scroll">
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="#" class="brand">Battle Rage</a>
+				<ul class="nav">
+					<!-- WTH To do! -->
+					<li><%= link_to "Sign in", user_session %></li>
+				    <li><%= link_to "Sign up", user_registration %></li>
+				    <li><%= link_to "Forgot your password?", edit_user_password %></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<%= yield %>
+	</div>
 
 </body>
 </html>

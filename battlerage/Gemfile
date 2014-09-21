@@ -42,3 +42,4 @@ gem 'tzinfo-data'
 
 #BattleRage
 gem 'devise'
+gem 'bootstrap-sass'
