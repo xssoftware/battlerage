@@ -11,19 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140920110132) do
+ActiveRecord::Schema.define(version: 20140922120010) do
+
+  create_table "boards", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "boards", ["game_id"], name: "index_boards_on_game_id"
+  add_index "boards", ["user_id"], name: "index_boards_on_user_id"
 
   create_table "fields", force: true do |t|
-    t.string  "ships_coordinates"
-    t.string  "stricked_positions_coordinates"
-    t.integer "stricked_ship_positions"
+    t.integer  "board_id"
+    t.boolean  "empty"
+    t.boolean  "hit"
+    t.string   "mark"
+    t.integer  "coordinate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "fields", ["board_id"], name: "index_fields_on_board_id"
+
+  create_table "fleets", force: true do |t|
+    t.integer  "board_id"
+    t.integer  "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fleets", ["board_id"], name: "index_fleets_on_board_id"
 
   create_table "games", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ships", force: true do |t|
+    t.integer  "fleet_id"
+    t.integer  "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ships", ["fleet_id"], name: "index_ships_on_fleet_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -42,13 +76,5 @@ ActiveRecord::Schema.define(version: 20140920110132) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "users_and_games", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "game_id"
-    t.integer  "field_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

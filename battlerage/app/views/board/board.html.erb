@@ -1,0 +1,12 @@
+<h1>Board</h1>
+<table border="1">
+ <%@board_layout.each_with_index do |row, i|%>
+ <tr>
+  <%row.each do |r|%>
+   <td>
+    <%=link_to r, root_url(coord: r)%>
+   </td>
+  <%end%>
+ </tr>
+ <%end%>
+</table>

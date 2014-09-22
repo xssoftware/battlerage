@@ -1,3 +1,3 @@
 class Field < ActiveRecord::Base
-	belong_to :game
+  belongs_to :board
 end

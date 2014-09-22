@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  board_id: 
+  empty: false
+  hit: false
+  mark: MyString
+  coordinate: 1
+
+two:
+  board_id: 
+  empty: false
+  hit: false
+  mark: MyString
+  coordinate: 1
