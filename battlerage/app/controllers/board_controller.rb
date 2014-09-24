@@ -1,5 +1,5 @@
 class BoardController < ApplicationController
-	def board
+  def board
     @board_layout = Array.new(10, "").map!{|row| Array.new(10, "")}
     @row_label = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
     @column_label = [" ", "1", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ",  "9 ", "10"]

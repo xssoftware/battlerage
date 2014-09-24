@@ -1,7 +1,7 @@
 <h1>Welcome, Captain!</h1>
 
 <div> <!-- New Game -->
-	<%= form_for(:board, url: game_new_game_url) do |f| %>
+	<%= form_for(:game, url: game_new_game_url) do |f| %>
 		<%= f.text_field :name %> <br/>
 		<%= f.submit "Create Game" %>
 	<% end %>
@@ -10,11 +10,14 @@
 <div> <!-- Game pool -->
 	<% games = Game.all %>
 	<% games.each do |game| %>
-		<h4><%= game.name %></h4>
-		<p><%= game.user.email %></p>
-		<%= link_to "Enter game", game_game_url%>
+		<h4>Game: <%= game.name %></h4>
+		<p><%= game.user_id %></p>
 	<% end %>
 	<% if games.size == 0 %>
 		<p>There aren't any games at the momment!</p>
 	<% end %>
+</div>
+
+<div>
+	<%= link_to "Sing out", destroy_user_session_path, method: :delete %>
 </div>

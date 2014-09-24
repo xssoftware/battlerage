@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'game/new_game'
+  post 'game/new_game'
 
   get 'board/board'
 

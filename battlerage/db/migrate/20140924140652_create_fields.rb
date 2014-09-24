@@ -5,7 +5,8 @@ class CreateFields < ActiveRecord::Migration
       t.boolean :empty
       t.boolean :hit
       t.string :mark
-      t.integer :coordinate
+      t.integer :x
+      t.integer :y
 
       t.timestamps
     end

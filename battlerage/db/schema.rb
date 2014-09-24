@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922131835) do
+ActiveRecord::Schema.define(version: 20140924140652) do
 
   create_table "boards", force: true do |t|
     t.integer  "user_id"
@@ -28,37 +28,22 @@ ActiveRecord::Schema.define(version: 20140922131835) do
     t.boolean  "empty"
     t.boolean  "hit"
     t.string   "mark"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "x"
     t.integer  "y"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "fields", ["board_id"], name: "index_fields_on_board_id"
 
-  create_table "fleets", force: true do |t|
-    t.integer  "board_id"
-    t.integer  "size"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "fleets", ["board_id"], name: "index_fleets_on_board_id"
-
   create_table "games", force: true do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "ships", force: true do |t|
-    t.integer  "fleet_id"
-    t.integer  "size"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "ships", ["fleet_id"], name: "index_ships_on_fleet_id"
+  add_index "games", ["user_id"], name: "index_games_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

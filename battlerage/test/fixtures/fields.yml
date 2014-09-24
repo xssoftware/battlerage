@@ -5,11 +5,13 @@ one:
   empty: false
   hit: false
   mark: MyString
-  coordinate: 1
+  x: 1
+  'y': 1
 
 two:
   board_id: 
   empty: false
   hit: false
   mark: MyString
-  coordinate: 1
+  x: 1
+  'y': 1
