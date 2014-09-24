@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  get 'game/game'
   post 'game/new_game'
+  delete 'game/destroy'
 
   get 'board/board'
 
