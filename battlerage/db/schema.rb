@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922120010) do
+ActiveRecord::Schema.define(version: 20140922131835) do
 
   create_table "boards", force: true do |t|
     t.integer  "user_id"
@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(version: 20140922120010) do
     t.boolean  "empty"
     t.boolean  "hit"
     t.string   "mark"
-    t.integer  "coordinate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "x"
+    t.integer  "y"
   end
 
   add_index "fields", ["board_id"], name: "index_fields_on_board_id"

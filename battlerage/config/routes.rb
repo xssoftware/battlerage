@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'game/new_game'
+
   get 'board/board'
 
   get 'home/index'
