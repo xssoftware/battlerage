@@ -12,7 +12,7 @@
 	<% games.each do |game| %>
 		<h4><%= game.name %></h4>
 		<p><%= game.user.email %></p>
-		<%= link_to "Enter game", game_game_url #the url of the current game %>
+		<%= link_to "Enter game", game_game_url%>
 	<% end %>
 	<% if games.size == 0 %>
 		<p>There aren't any games at the momment!</p>
