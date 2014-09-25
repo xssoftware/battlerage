@@ -4,14 +4,14 @@
 
 <div class="container">
 	<div class="row">		
-		<div class="col-md-4"> <!-- Game pool -->
+		<div class="col-md-4">
 			<% games = Game.all %>
 			<% games.each do |game| %>
 				<h4>Game: <%= game.name %></h4>
 				<p>
 					<%= creator_user_name(game) %>
-					<% if creator_user_name(game) == current_user.email %> <!-- Not name, sorry -->
-						<%= link_to "Leave game", game_destroy_url(game), method: :delete %>
+					<% if creator_user_name(game) == current_user.email %> 
+						<%= link_to "Leave game", game_destroy_url(game.id), method: :delete %>
 					<% else %>
 						<%= link_to "Join game", game_game_url %>
 					<% end %>
@@ -26,6 +26,7 @@
 			<div class="well">
 				<div class="input-group">
 					<%= form_for(:game, url: game_new_game_url) do |f| %>
+						<%= f.label :name %> <br/>
 						<%= f.text_field :name %> <br/>
 						<%= f.submit "Create Game" %>
 					<% end %>

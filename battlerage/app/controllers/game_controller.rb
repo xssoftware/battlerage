@@ -10,7 +10,7 @@ class GameController < ApplicationController
 
   end
 
-  def destroy(game)
-  	Game.find(@game.id).destroy
+  def destroy
+  	Game.find(params[:id]).destroy
   end
 end

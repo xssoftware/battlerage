@@ -1,6 +1,6 @@
 <form class="form-signin" role="form">
 	<h2 class="form-signin-heading">Sign up</h2>
-	<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 	  <%= devise_error_messages! %>
 
 	  <div><%= f.label :email %><br />
