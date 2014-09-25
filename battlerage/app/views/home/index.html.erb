@@ -4,16 +4,18 @@
 
 <div class="container">
 	<div class="row">		
-		<div class="col-md-4">
+		<div class="col-md-4"> 
 			<% games = Game.all %>
 			<% games.each do |game| %>
 				<h4>Game: <%= game.name %></h4>
 				<p>
 					<%= creator_user_name(game) %>
-					<% if creator_user_name(game) == current_user.email %> 
-						<%= link_to "Leave game", game_destroy_url(game.id), method: :delete %>
+					<% if creator_user_name(game) == current_user.email %>
+						<%= link_to "Leave game", delete_game_url(game.id), method: :delete %> |
+						<%= link_to "Return", return_to_game_url(game.id) %>
 					<% else %>
-						<%= link_to "Join game", game_game_url %>
+						<%= link_to "Join game", return_to_game_url(game.id) %>
+						<!-- After receiving board you can Leave -->
 					<% end %>
 				</p>
 			<% end %>

@@ -1,5 +1,7 @@
-<h1>Place your fleet</h1>
+<!-- Should find a way to pass the game information -->
+<h2>Game: <%= params[:game][:name] %></h2>
 
-<p>Choose positions to put your ships.</p>
+<p>Place your fleet.</p>
 
 <%= link_to "Exit to lobby", root_url %>
+<!-- link_to "Surrender", board_destroy_url, method: :delete -->

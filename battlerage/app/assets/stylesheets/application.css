@@ -18,3 +18,8 @@
 body {
 	padding-top: 70px;
 }
+
+input {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

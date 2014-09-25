@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'game/game'
+  get 'game/game/:id' => 'game#game', as: :return_to_game
   post 'game/new_game'
   delete 'game/destroy/:id' => 'game#destroy', as: :delete_game
 
