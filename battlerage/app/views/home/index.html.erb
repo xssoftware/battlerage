@@ -24,10 +24,12 @@
 	
 		<div class="col-md-4 col-md-push-3">
 			<div class="well">
-				<%= form_for(:game, url: game_new_game_url) do |f| %>
-					<%= f.text_field :name %> <br/>
-					<%= f.submit "Create Game" %>
-				<% end %>
+				<div class="input-group">
+					<%= form_for(:game, url: game_new_game_url) do |f| %>
+						<%= f.text_field :name %> <br/>
+						<%= f.submit "Create Game" %>
+					<% end %>
+				</div>				
 			</div>
 		</div>
 	</div>
